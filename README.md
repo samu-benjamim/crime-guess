@@ -9,24 +9,20 @@ Crime Guess é um jogo de dedução onde o jogador deve descobrir o assassino, a
 ## ⚙️ Regras do Jogo
 
 - Cada rodada contém:
-
   - **3 suspeitos**
   - **3 armas**
   - **3 locais**
 
 - **Pistas**:
-
   - Algumas pistas iniciais são fornecidas.
   - Se o jogador errar **2 tentativas**, ele recebe uma pista extra.
 
 - **Pontuação**:
-
   - Não há condição de “vencer” ou “perder”.
   - O jogador ganha mais pontos se acertar de primeira.
   - Cada tentativa incorreta diminui a pontuação.
 
 - **Tentativas**:
-
   - O jogador pode tentar quantas vezes desejar.
 
 ---
@@ -111,7 +107,6 @@ Crime Guess é um jogo de dedução onde o jogador deve descobrir o assassino, a
   ```
 
 - **Lógica:**
-
   - Conta quantas tentativas o jogador já fez no cenário.
   - Salva tentativa (`attempt`) no banco.
   - Se o palpite estiver correto, marca como resolvido e atualiza ranking.
@@ -131,33 +126,3 @@ Crime Guess é um jogo de dedução onde o jogador deve descobrir o assassino, a
 - **DELETE /api/scenarios/:id** — Remove um cenário.
 
 ---
-
-## Estrutura de Pastas do Projeto (Back-end)
-
-Para um projeto Node.js + Express + TypeScript, uma estrutura clara poderia ser assim:
-
-```bash
-crime-guess/
-│
-├─ src/                  # Código fonte
-│   ├─ controllers/      # Funções que lidam com lógica dos endpoints
-│   ├─ routes/           # Definição das rotas da API
-│   ├─ models/           # Modelos / ORM (ex: Prisma ou Sequelize)
-│   ├─ services/         # Lógica de negócio (ex: calcular ranking)
-│   ├─ middlewares/      # Middlewares Express (autenticação, validação)
-│   ├─ utils/            # Funções utilitárias (ex: gerar id, formatar datas)
-│   └─ app.ts            # Configuração do Express e rotas
-│
-├─ prisma/ (ou db/)      # Migrações e schema do banco (se usar ORM)
-│
-├─ tests/                # Testes unitários/integrados
-│
-├─ .env                  # Variáveis de ambiente
-├─ .env.example          # Exemplo para compartilhamento
-├─ package.json
-├─ tsconfig.json         # Configuração do TypeScript
-├─ .eslintrc.json        # Configuração ESLint
-├─ .prettierrc           # Configuração Prettier
-└─ README.md
-
-```
