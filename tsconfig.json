@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // versão do JS gerada
+    "module": "CommonJS", // para Node.js
+    "rootDir": "./src", // pasta onde estão os arquivos TS
+    "outDir": "./dist", // pasta para os arquivos JS compilados
+    "strict": true, // ativa verificações rigorosas
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"], // todos os arquivos TS dentro de src
+  "exclude": ["dist", "node_modules"] // excluir dist e node_modules
+}
