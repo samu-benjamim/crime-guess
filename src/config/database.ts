@@ -1,4 +1,3 @@
-// src/database/index.ts
 import { Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
 
@@ -11,11 +10,10 @@ export const sequelize = new Sequelize(
   {
     host: process.env.DB_HOST,
     dialect: 'postgres',
-    logging: false, // Desativa logs SQL no console
+    logging: true,
   },
 );
 
-// Função para testar a conexão
 export const testConnection = async () => {
   try {
     await sequelize.authenticate();

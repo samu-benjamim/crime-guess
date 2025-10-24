@@ -8,14 +8,10 @@ interface UserAttributes {
   email: string;
   password_hash: string;
   avatar_url?: string | null;
-  created_at?: Date;
 }
 
 // Tipagem para criação (id e created_at são opcionais)
-export type UserCreationAttributes = Optional<
-  UserAttributes,
-  'id' | 'created_at'
->;
+export type UserCreationAttributes = Optional<UserAttributes, 'id'>;
 
 // Classe do model
 export class User
@@ -37,6 +33,7 @@ User.init(
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
+      allowNull: false,
     },
     username: {
       type: DataTypes.STRING(50),
@@ -56,15 +53,10 @@ User.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    created_at: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
-    },
   },
   {
     sequelize,
     tableName: 'users',
-    timestamps: false, // já temos o created_at manual
   },
 );
 
